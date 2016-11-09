@@ -1,0 +1,14 @@
+---
+- hosts: planet
+  tasks:
+  - setup:
+  - ec2_facts:
+
+- hosts: qpid
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - apigee-opdk-setup-default-settings
+  - { role: apigee-opdk-server-self, server_type: 'qs'}
+  - apigee-opdk-setup-qpid-add
+
