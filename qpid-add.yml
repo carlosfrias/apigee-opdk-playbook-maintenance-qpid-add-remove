@@ -4,7 +4,7 @@
   - setup:
   - ec2_facts:
 
-- hosts: qpid
+- hosts: '{{ hosts }}'
   vars_files:
   - ~/.apigee/credentials.yml
   roles:
